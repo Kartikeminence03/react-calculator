@@ -36,15 +36,12 @@ const Calculator = () => {
 	}
 
 	const deleteLast = () => {
-		if (calculator == '') {
-
-		}
+				if(calculator.length>0){
+					console.log(calculator);
 		const value = calculator.slice(0, -1);
-
-		
 		setCalculator(value);
-		setResult(eval(value).toString());
-		
+		setResult(value ? eval(value).toString() : '');
+				}
 	}
 
 	const calculateAns = () => {
@@ -56,14 +53,13 @@ const Calculator = () => {
 		
 	}
 
-	//console.log(calculator.length)
 
 	
 	return (
 		<div className="App">
 			<div className="calculator">
 				<div className="display">
-					<span>{result ? '(' + result + ')' : ''}</span> {calculator||0}
+					<span>{}</span> {calculator}
 				</div>
 
 				<div className="operators">
